@@ -21,8 +21,8 @@ func handleConnection(c net.Conn) {
 
 		var out string
 
-		msg := strings.TrimSpace(string(netData))
-		switch strings.ToLower(msg) {
+		msg := strings.ToLower(strings.TrimSpace(string(netData)))
+		switch msg {
 		case "stop":
 			return
 		case "help":
