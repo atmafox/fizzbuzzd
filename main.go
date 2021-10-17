@@ -34,14 +34,17 @@ func handleConnection(c net.Conn) {
 			} else {
 				// only hit here if a valid number
 
-				if i%3 == 0 && i%5 == 0 {
-					out = strconv.Itoa(i) + " FizzBuzz\n"
-				} else if i%3 == 0 {
-					out = strconv.Itoa(i) + " Fizz\n"
-				} else if i%5 == 0 {
-					out = strconv.Itoa(i) + " Buzz\n"
-				} else {
-					out = strconv.Itoa(i) + "\n"
+				switch {
+				case i == 0:
+					out = "Result: " + strconv.Itoa(i) + "\n"
+				case i%3 == 0 && i%5 == 0:
+					out = "Result: " + strconv.Itoa(i) + " FizzBuzz\n"
+				case i%3 == 0:
+					out = "Result: " + strconv.Itoa(i) + " Fizz\n"
+				case i%5 == 0:
+					out = "Result: " + strconv.Itoa(i) + " Buzz\n"
+				default:
+					out = "Result: " + strconv.Itoa(i) + "\n"
 				}
 			}
 		}
