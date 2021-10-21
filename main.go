@@ -37,7 +37,7 @@ func handleConnection(c net.Conn) {
 				switch {
 				case i == 0:
 					out = "Result: " + strconv.Itoa(i) + "\n"
-				case i%3 == 0 && i%5 == 0:
+				case i%15 == 0:
 					out = "Result: " + strconv.Itoa(i) + " FizzBuzz\n"
 				case i%3 == 0:
 					out = "Result: " + strconv.Itoa(i) + " Fizz\n"
