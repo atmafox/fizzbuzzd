@@ -57,7 +57,7 @@ func main() {
 	flag.Parse()
 
 	PORT := ":3666"
-	l, err := net.Listen("tcp4", PORT)
+	l, err := net.Listen("tcp", PORT)
 	if err != nil {
 		fmt.Println(err)
 		return
